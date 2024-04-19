@@ -313,7 +313,7 @@ main > div#sadrzaj.rezultat > div.artikli > form.artikal:hover {border: 1px soli
 main > div#sadrzaj.rezultat > div.artikli > form.artikal > * {justify-self: center; align-self: center;}
 main > div#sadrzaj.rezultat > div.artikli > form.artikal > button.favorit {position: absolute; background-image: url("/kapriol/resursi/grafika/ikone/kapriol.svg"); background-size: contain; background-repeat: no-repeat; background-position: center; background-color: transparent; margin: 0; top: 12px; right: 5px; height: 35px; width: 35px; border: 0; z-index: 999;}
 main > div#sadrzaj.rezultat > div.artikli > form.artikal > button.favorit:hover {background-image: url("/kapriol/resursi/grafika/ikone/kapriol.svg");}
-main > div#sadrzaj.rezultat > div.artikli > form.artikal > a {position: relative; display: block; height: 100%; width: 100%;}
+main > div#sadrzaj.rezultat > div.artikli > form.artikal > a {position: relative; display: block; width: 100%;}
 main > div#sadrzaj.rezultat > div.artikli > form.artikal > a > img {object-fit: contain; height: 100%; width: 100%;}
 main > div#sadrzaj.rezultat > div.artikli > form.artikal > span.gratis > svg {fill: #000; height: 40px; width: 40px;}
 main > div#sadrzaj.rezultat > div.artikli > form.artikal > a.naslov {font-weight: 500; color: var(--boja-tekst-tamnije);}
@@ -643,7 +643,7 @@ footer > div.info > span {grid-column: 3 / 5; grid-row: 2 / 3; justify-self: cen
     main > div#sadrzaj.rezultat > div.meni > form[data-oznaka="rezultat_podkategorije"] {grid-column: 1 / 3;}
     main > div#sadrzaj.rezultat > div.meni > div.velicine {grid-column: 1 / 3; grid-row: 2 / 3;}
     main > div#sadrzaj.rezultat > div.artikli > a.artikal {grid-template-rows: 220px 40px 40px;}
-    main > div#sadrzaj.rezultat > div.artikli > form.artikal > span.novo {top: 5px; bottom: initial;}
+    main > div#sadrzaj.rezultat > div.artikli > form.artikal > span.novo {position: initial; left: initial; bottom: initial; padding: initial;}
     main > div#sadrzaj.artikl > form.artikl > span.kosarica {grid-template-columns: 60px 100px 60px auto;}
     main > div#sadrzaj.artikl > form.artikl > span.kosarica > label.select {grid-column: 1 / 5;}
     main > div#sadrzaj.artikl > form.artikl > span.kosarica > button.minus {grid-column: 1 / 2;}

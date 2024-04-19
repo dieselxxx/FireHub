@@ -138,13 +138,13 @@ final class Rezultat_Kontroler extends Master_Kontroler {
             // gratis
             $gratis = '';
             if ($artikal['GratisID'] <> '0') {
-                $gratis = '<svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#gratis"></use></svg>';
+                $gratis = '<span class="gratis"><svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#gratis"></use></svg></span>';
             }
 
             // novo
             $novo = '';
             if ($artikal['Novo'] === '1') {
-                $novo = '<span class="novo"><svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#novo"></use></svg></span>';
+                $novo .= '<span class="novo"><svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#novo"></use></svg></span>';
             }
 
             $artikli_html .= <<<Artikal
@@ -155,11 +155,11 @@ final class Rezultat_Kontroler extends Master_Kontroler {
                         <a href="/artikl/{$artikal['Link']}">
                             <img src="/slika/malaslika/{$artikal['Slika']}" alt="" loading="lazy"/>
                         </a>
-                        <span class="gratis">$gratis</span>
+                        $gratis
+                        $novo
                         <a class="naslov" href="/artikl/{$artikal['Link']}">{$artikal['Naziv']}</a>
                         <a href="/artikl/{$artikal['Link']}" class="cijena">$artikl_cijena</a>
                         <span class="zaliha"></span>
-                        $novo
                 </form>
 
             Artikal;

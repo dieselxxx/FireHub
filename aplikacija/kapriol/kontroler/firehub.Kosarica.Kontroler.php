@@ -409,8 +409,54 @@ final class Kosarica_Kontroler extends Master_Kontroler {
             'forma_oib' => $_POST['oib'] ?? '',
             'forma_tvrtka_adresa' => $_POST['tvrtkaadresa'] ?? '',
             'forma_placanje' => $_POST['placanje'] ?? '',
-            'forma_napomena' => $_POST['napomena'] ?? ''
+            'forma_napomena' => $_POST['napomena'] ?? '',
+            "ga4_pocni_narudzbu" => $this->GA4PocniNarudzbu()
         ]);
+
+    }
+
+    /**
+     * GA4 počni narudžbu
+     */
+    private function GA4PocniNarudzbu ():string {
+
+        $kosarica_model = $this->model(Kosarica_Model::class);
+
+        $artikli = $this->model(Kosarica_Model::class)->artikli();
+
+        $items = '';
+        $total_cijena = 0;
+        $index = 0;
+        foreach ($artikli as $item) {
+
+            $artikal_popust = $item['CijenaAkcija'] > 0 ? $item['Cijena'] - $item['CijenaAkcija'] : $item['CijenaAkcija'];
+
+            $total_cijena += $item['CijenaUkupno'];
+
+            $items .= '
+                {
+                  item_id: "'.$item['ID'].'",
+                  item_name: "'.$item['Naziv'].'",
+                  currency: "'.Domena::valutaISO().'",
+                  discount: '.$artikal_popust.',
+                  index: '.$index++.',
+                  price: '.$item['Cijena'].',
+                  quantity: '.$item['Kolicina'].'
+                },
+            ';
+        }
+
+        return '
+            <script>
+                gtag("event", "begin_checkout", {
+                    value: '.$total_cijena.',
+                    currency: "'.Domena::valutaISO().'",
+                    items: [
+                        '.$items.'
+                        ]
+                });
+            </script>
+        ';
 
     }
 

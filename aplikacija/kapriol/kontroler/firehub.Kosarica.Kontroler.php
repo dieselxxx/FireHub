@@ -234,8 +234,54 @@ final class Kosarica_Kontroler extends Master_Kontroler {
             'opci_uvjeti' => Domena::opciUvjeti(),
             'kosarica_artikli' => $artikli_html,
             'kosarica_artikli_gratis' => $artikli_gratis_html,
-            'kosarica_artikli_ukupno' => $kosarica_artikli_ukupno
+            'kosarica_artikli_ukupno' => $kosarica_artikli_ukupno,
+            "ga4_kosarica" => $this->GA4Kosarica()
         ]);
+
+    }
+
+    /**
+     * GA4 kosarica
+     */
+    private function GA4Kosarica ():string {
+
+        $kosarica_model = $this->model(Kosarica_Model::class);
+
+        $artikli = $this->model(Kosarica_Model::class)->artikli();
+
+        $items = '';
+        $total_cijena = 0;
+        $index = 0;
+        foreach ($artikli as $item) {
+
+            $artikal_popust = $item['CijenaAkcija'] > 0 ? $item['Cijena'] - $item['CijenaAkcija'] : $item['CijenaAkcija'];
+
+            $total_cijena += $item['CijenaUkupno'];
+
+            $items .= '
+                {
+                  item_id: "'.$item['ID'].'",
+                  item_name: "'.$item['Naziv'].'",
+                  currency: "'.Domena::valutaISO().'",
+                  discount: '.$artikal_popust.',
+                  index: '.$index++.',
+                  price: '.$item['Cijena'].',
+                  quantity: '.$item['Kolicina'].'
+                },
+            ';
+        }
+
+        return '
+            <script>
+                gtag("event", "view_cart", {
+                    value: '.$total_cijena.',
+                    currency: "'.Domena::valutaISO().'",
+                    items: [
+                        '.$items.'
+                        ]
+                });
+            </script>
+        ';
 
     }
 

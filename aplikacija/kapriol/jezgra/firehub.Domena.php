@@ -174,11 +174,11 @@ final class Domena {
                 <ul>
                     <li>
                         <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#strelica_desno_duplo2"></use></svg>
-                        <span>Besplatna dostava za narudzbe preko 99.50 €.</span>
+                        <span>Besplatna dostava za narudzbe preko 149 €.</span>
                     </li>
                     <li>
                         <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#strelica_desno_duplo2"></use></svg>
-                        <span>Dostava za narudzbe manje od 99.50 € iznosi 4.65 €.</span>
+                        <span>Dostava za narudzbe manje od 149 € iznosi 6 €.</span>
                     </li>
                     <li>
                         <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#strelica_desno_duplo2"></use></svg>
@@ -197,11 +197,11 @@ final class Domena {
                 <ul>
                     <li>
                         <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#strelica_desno_duplo2"></use></svg>
-                        <span>Besplatna dostava za narudzbe preko 99.90 KM.</span>
+                        <span>Besplatna dostava za narudzbe preko 149 KM.</span>
                     </li>
                     <li>
                         <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#strelica_desno_duplo2"></use></svg>
-                        <span>Dostava za narudzbe manje od 99.90 KM iznosi 7 KM.</span>
+                        <span>Dostava za narudzbe manje od 149 KM iznosi 9 KM.</span>
                     </li>
                     <li>
                         <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#strelica_desno_duplo2"></use></svg>
@@ -232,11 +232,11 @@ final class Domena {
 
         if (self::Hr()) {
 
-            return 99.50;
+            return 149;
 
         }
 
-        return 99.89;
+        return 149;
 
     }
 
@@ -244,11 +244,11 @@ final class Domena {
 
         if (self::Hr()) {
 
-            return 4.65;
+            return 6;
 
         }
 
-        return 7;
+        return 9;
 
     }
 

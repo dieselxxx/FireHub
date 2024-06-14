@@ -241,6 +241,28 @@ final class Artikl_Model extends Master_Model {
                 )
                 ->napravi();
 
+            $spremi = $this->bazaPodataka
+                ->transakcija(
+                    (new BazaPodataka())->tabela('artiklicijene')
+                        ->umetni([
+                            'ArtikalID' => $id,
+                            'Cijena' => $cijena,
+                            'Vrsta' => 'BA',
+                            'Datum' => (new \DateTime())->format('Y-m-d')
+                        ])
+                )->napravi();
+
+            $spremi = $this->bazaPodataka
+                ->transakcija(
+                    (new BazaPodataka())->tabela('artiklicijene')
+                        ->umetni([
+                            'ArtikalID' => $id,
+                            'Cijena' => $cijena_hr,
+                            'Vrsta' => 'HR',
+                            'Datum' => (new \DateTime())->format('Y-m-d')
+                        ])
+                )->napravi();
+
         } else {
 
             $spremi = $this->bazaPodataka

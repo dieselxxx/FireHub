@@ -371,6 +371,22 @@ final class Artikl_Model extends Master_Model {
     }
 
     /**
+     * ### Izbriši cijenu artikla
+     * @since 0.1.2.pre-alpha.M1
+     */
+    public function izbrisiCijenu (int $id) {
+
+        $naziv_sql = $this->bazaPodataka
+            ->sirovi("
+            DELETE
+            FROM artiklicijene
+            WHERE ID = '$id'
+        ")
+            ->napravi();
+
+    }
+
+    /**
      * ### Dohvati karakteristike artikla
      * @since 0.1.2.pre-alpha.M1
      *

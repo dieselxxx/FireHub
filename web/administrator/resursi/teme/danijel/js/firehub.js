@@ -1672,6 +1672,40 @@ $_ArtiklIzbrisiSliku = function ($slika) {
 
 };
 
+$_ArtiklIzbrisiCijenu = function ($slika) {
+
+    let artikl_forma = $('form[data-oznaka="artikl"]');
+
+    let $id = artikl_forma.data("sifra");
+
+    let $podatci = artikl_forma.serializeArray();
+
+    $.ajax({
+        type: 'POST',
+        url: '/administrator/artikli/izbrisicijenu/' + $slika,
+        dataType: 'json',
+        data: $podatci,
+        beforeSend: function () {
+            //
+        },
+        success: function (odgovor) {
+            if (odgovor.Validacija === "da") {
+
+            } else {
+                //$(element).closest('form').find('table tr.poruka td').append(odgovor.Poruka);
+            }
+        },
+        error: function () {
+        },
+        complete: function (odgovor) {
+            $_Artikl($id);
+        }
+    });
+
+    return false;
+
+};
+
 /**
  * Spremi sliku kateogrije.
  */

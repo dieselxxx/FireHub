@@ -331,6 +331,37 @@ final class Artikli_Kontroler extends Master_Kontroler {
     }
 
     /**
+     * ### Izbrisi cijenu artikla
+     * @since 0.1.2.pre-alpha.M1
+     *
+     * @return Sadrzaj
+     */
+    #[Zaglavlja(vrsta: Vrsta::JSON)]
+    public function izbrisiCijenu (string $kontroler = '', string $metoda = '', int $id = 0):Sadrzaj {
+
+        try {
+
+            // model
+            $artikl = $this->model(Artikl_Model::class);
+            $artikl->izbrisiCijenu($id);
+
+            return sadrzaj()->format(Sadrzaj_Vrsta::JSON)->podatci([
+                'Validacija' => 'da',
+                'Poruka' => _('Uspješno izbrisano')
+            ]);
+
+        } catch (Greska $greska) {
+
+            return sadrzaj()->format(Sadrzaj_Vrsta::JSON)->podatci([
+                'Validacija' => 'ne',
+                'Poruka' => $greska->getMessage()
+            ]);
+
+        }
+
+    }
+
+    /**
      * ## Uredi zalihu artikla
      * @since 0.1.2.pre-alpha.M1
      *

@@ -30,6 +30,7 @@ Rute::sve('artikli/artiklsifreizbrisi', [\FireHub\Aplikacija\Administrator\Kontr
 Rute::sve('artikli/spremi', [\FireHub\Aplikacija\Administrator\Kontroler\Artikli_Kontroler::class, 'spremi']);
 Rute::sve('artikli/dodajsliku', [\FireHub\Aplikacija\Administrator\Kontroler\Artikli_Kontroler::class, 'dodajsliku']);
 Rute::sve('artikli/izbrisisliku', [\FireHub\Aplikacija\Administrator\Kontroler\Artikli_Kontroler::class, 'izbrisisliku']);
+Rute::sve('artikli/izbrisicijenu', [\FireHub\Aplikacija\Administrator\Kontroler\Artikli_Kontroler::class, 'izbrisicijenu']);
 Rute::sve('reklame/index', [\FireHub\Aplikacija\Administrator\Kontroler\Reklame_Kontroler::class, 'index']);
 Rute::sve('reklame/dodajsliku', [\FireHub\Aplikacija\Administrator\Kontroler\Reklame_Kontroler::class, 'dodajsliku']);
 Rute::sve('reklame/spremi', [\FireHub\Aplikacija\Administrator\Kontroler\Reklame_Kontroler::class, 'spremi']);

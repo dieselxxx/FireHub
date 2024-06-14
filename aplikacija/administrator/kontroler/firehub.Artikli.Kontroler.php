@@ -141,6 +141,24 @@ final class Artikli_Kontroler extends Master_Kontroler {
 
         }
 
+        // cijene
+        $cijene = $artikl_model->cijene($id);
+        $cijene_html = '';
+        foreach ($cijene as $cijena) {
+
+            $cijene_html .= '
+                <tr>
+                    <td>'.$cijena['Cijena'].'</td>
+                    <td>'.$cijena['Vrsta'].'</td>
+                    <td>'.$cijena['Datum'].'</td>
+                    <td>
+                        <a class="gumb" data-boja="boja" onclick="$_ArtiklIzbrisiCijenu(\''.$cijena['ID'].'\')">Izbriši</a>
+                    </td>
+                </tr>
+            ';
+
+        }
+
         // gratis
         $gratis_model = $this->model(Artikli_Model::class);
         $gratis_artikli = $gratis_model->listaGratis();
@@ -173,6 +191,7 @@ final class Artikli_Kontroler extends Master_Kontroler {
             'kategorije' => $kategorije_html,
             'slike' => $slike_html,
             'slikeOpcija' => $slikeOpcija,
+            'cijene' => $cijene_html,
             'zadanaSlika' => ''.$artikl['Slika'].'' ?? 0,
             'zadanaSlika_naziv' => $artikl['SlikaNaziv'] ?? '== bez gratis artikla ==',
             'gratisBa' => ''.$artikl['GratisBa'].'' ?? 0,

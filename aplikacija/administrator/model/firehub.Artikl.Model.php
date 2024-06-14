@@ -115,6 +115,32 @@ final class Artikl_Model extends Master_Model {
     }
 
     /**
+     * ### Cijena artikla
+     * @since 0.1.2.pre-alpha.M1
+     *
+     * @param int $id
+     *
+     * @throws Kontejner_Greska
+     * @return array
+     */
+    public function cijene (int $id):array {
+
+        $slike = $this->bazaPodataka
+            ->sirovi("
+                SELECT
+                    artiklicijene.ID, artiklicijene.Cijena, artiklicijene.Vrsta, artiklicijene.Datum
+                FROM artiklicijene
+                WHERE artiklicijene.ArtikalID = $id
+                AND artiklicijene.Datum >= (CURDATE() - INTERVAL 10 DAY)
+                ORDER BY artiklicijene.ID DESC
+            ")
+            ->napravi();
+
+        return $slike->niz() ?: [];
+
+    }
+
+    /**
      * ### Spremi artikl
      * @since 0.1.2.pre-alpha.M1
      */

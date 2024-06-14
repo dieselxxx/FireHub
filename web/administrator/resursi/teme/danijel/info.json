@@ -8,6 +8,6 @@
     "javascript": [
         "js/biblioteke.js",
         "js/dodaj.js?v=1.0",
-        "js/firehub.js"
+        "js/firehub.js?v=1.0"
     ]
 }

@@ -58,36 +58,28 @@ final class Kosarica_Kontroler extends Master_Kontroler {
 
             foreach ($kosarica_artikli as $artikal) {
 
-                // cijene
-                $euro_cijena = Domena::Hr() ? '<span style="font-size: 0.7rem">('.number_format((float)$artikal['Cijena'] * 7.5345, 2, ',', '.').' kn)</span>' : '';
                 if ($artikal['CijenaAkcija'] > 0) {
 
-                    $euro_cijena_akcija = Domena::Hr() ? '<span style="font-size: 0.8rem">('.number_format((float)$artikal['CijenaAkcija'] * 7.5345, 2, ',', '.').' kn)</span>' : '';
-
                     $artikl_cijena = '
-                        <span class="akcija">'.number_format((float)$artikal['CijenaAkcija'], 2, ',', '.').' '.Domena::valuta().$euro_cijena_akcija.'</span>
-                        <span class="prekrizi">'.number_format((float)$artikal['Cijena'], 2, ',', '.').' '.Domena::valuta().$euro_cijena.'</span>
+                        <span class="akcija">'.number_format((float)$artikal['CijenaAkcija'], 2, ',', '.').'</span>
                     ';
 
                 } else if (Domena::blackFriday()) {
 
-                    $euro_cijena = Domena::Hr() ? '<span style="font-size: 0.7rem">('.number_format(((float)$artikal['Cijena'] * 7.5345) - ((float)$artikal['Cijena'] * 7.5345 * Domena::blackFridayPopust()), 2, ',', '.').' kn)</span>' : '';
                     $artikl_cijena = '
-                        <span>'.number_format((float)$artikal['Cijena'] - ((float)$artikal['Cijena'] * Domena::blackFridayPopust()), 2, ',', '.').' '.Domena::valuta().$euro_cijena.'</span>
+                        <span>'.number_format((float)$artikal['Cijena'] - ((float)$artikal['Cijena'] * Domena::blackFridayPopust()), 2, ',', '.').' '.Domena::valuta().'</span>
                     ';
 
                 } else {
 
                     $artikl_cijena = '
-                        <span>'.number_format((float)$artikal['Cijena'], 2, ',', '.').' '.Domena::valuta().$euro_cijena.'</span>
+                        <span>'.number_format((float)$artikal['Cijena'], 2, ',', '.').' '.Domena::valuta().'</span>
                     ';
 
                 }
 
                 // ako nije dostava
                 if ($artikal['ID'] !== '0') {
-
-                    $euro_cijena_ukupno = Domena::Hr() ? '<span style="font-size: 0.8rem">('.number_format((float)$artikal['CijenaUkupno'] * 7.5345, 2, ',', '.').' kn)</span>' : '';
 
                     // gratis
                     $gumbovi = '
@@ -127,7 +119,7 @@ final class Kosarica_Kontroler extends Master_Kontroler {
                         <a class="naslov" href="/artikl/'.$artikal['Link'].'">'.$artikal['Naziv'].'</a>
                         <span class="velicina">Veličina: '.$artikal['Velicina'].'</span>
                         <span class="cijena">'.$artikl_cijena.'</span>
-                        <h3 class="ukupno">Ukupno: '.number_format((float)$artikal['CijenaUkupno'], 2, ',', '.').' '.Domena::valuta().$euro_cijena_ukupno.'</h3>
+                        <h3 class="ukupno">Ukupno: '.number_format((float)$artikal['CijenaUkupno'], 2, ',', '.').' '.Domena::valuta().'</h3>
                         <div class="kosarica">
                             '.$gumbovi.'
                             <button type="submit" class="gumb ikona" name="kosarica_izbrisi">
@@ -161,12 +153,10 @@ final class Kosarica_Kontroler extends Master_Kontroler {
                 }
                 $total_cijena += $artikal['CijenaUkupno'];
 
-                $euro_cijena_total = Domena::Hr() ? '<span style="font-size: 0.7rem">('.number_format((float)$total_cijena * 7.5345, 2, ',', '.').' kn)</span>' : '';
-
                 $kosarica_artikli_ukupno = '
                     <ul>
                         <li>Ukupna količina: '.$total_kolicina.'</li>
-                        <li class="ukupno">Ukupna cijena: <span>'.number_format((float)$total_cijena, 2, ',', '.').' '.Domena::valuta().$euro_cijena_total.'</span></li>
+                        <li class="ukupno">Ukupna cijena: <span>'.number_format((float)$total_cijena, 2, ',', '.').' '.Domena::valuta().'</span></li>
                     </ul>
                     <a data-boja="boja" class="gumb ikona" href="/kosarica/narudzbab2b">
                         <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#strelica_desno_duplo2"></use></svg>

@@ -99,38 +99,39 @@ final class Rezultat_Kontroler extends Master_Kontroler {
         foreach ($artikli as $artikal) {
 
             // cijene
-            $euro_cijena = Domena::Hr() ? '<span>'.number_format((float)$artikal['Cijena'] * 7.5345, 2, ',', '.').' kn</span>' : '';
+            $najnize_cijena = Domena::Hr()
+                ? '<span style="font-size: 0.7rem">
+                    najniža cijena u posljednih 30 dana: '.$artikal['Cijena30Dana'] .' '.Domena::valuta().'
+                    </span>'
+                : '';
+
             if ($artikal['CijenaAkcija'] > 0) {
 
                 $artikal_popust = -($artikal['Cijena'] - $artikal['CijenaAkcija']) / (max($artikal['Cijena'], 1)) * 100;
 
-                $euro_cijena_akcija = Domena::Hr() ? '<span>'.number_format((float)$artikal['CijenaAkcija'] * 7.5345, 2, ',', '.').' kn</span>' : '';
-
                 $artikl_cijena = '
                     <span class="prekrizi">'.number_format((float)$artikal['Cijena'], 2, ',', '.').' '.Domena::valuta().'</span>
                     <h2 class="akcija">'.number_format((float)$artikal['CijenaAkcija'], 2, ',', '.').' '.Domena::valuta().'</h2>
-                    <span class="prekrizi">'.$euro_cijena.'</span>
-                    <h2 class="akcija">'.$euro_cijena_akcija.'</h2>
+                    '.$najnize_cijena.'
+ 
                     <span class="popust">'.number_format($artikal_popust, 2, ',').' %</span>
                 ';
 
             } else if (Domena::blackFriday()) {
 
                 $bf_cijena = $artikal['Cijena'] - ($artikal['Cijena'] * Domena::blackFridayPopust());
-                $bf_cijena_euro = Domena::Hr() ? '<span>'.number_format(((float)$artikal['Cijena'] * 7.5345) - ((float)$artikal['Cijena'] * 7.5345 * Domena::blackFridayPopust()), 2, ',', '.').' kn</span>' : '';
                 $artikl_cijena = '
                 <img style="height: 40%;" alt="bf" src="/kapriol/resursi/grafika/logo/bf.png">
                 <h2 style="margin: 20px 0 0 0;">'.number_format((float)$bf_cijena, 2, ',', '.').' '.Domena::valuta().'</h2>
-                <h2 style="margin: 5px 0 0 0;">'.$bf_cijena_euro.'</h2>
+                '.$najnize_cijena.'
                 <span class="prekrizi">'.number_format((float)$artikal['Cijena'], 2, ',', '.').' '.Domena::valuta().'</span>
-                <span class="prekrizi">'.$euro_cijena.'</span>
             ';
 
             } else {
 
                 $artikl_cijena = '
                     <h2>'.number_format((float)$artikal['Cijena'], 2, ',', '.').' '.Domena::valuta().'</h2>
-                    <h2>'.$euro_cijena.'</h2>
+                    '.$najnize_cijena.'
                 ';
 
             }
@@ -215,6 +216,8 @@ final class Rezultat_Kontroler extends Master_Kontroler {
             //$velicine_html .= '<li><a class="gumb mali" href="/rezultat/'.$trenutna_kategorija['Link'].'/'.$velicina_artikla['Velicina'].'/'.$trazi.'/'.$poredaj.'/'.$poredaj_redoslijed.'">'.$velicina_artikla['Velicina'].'</a></li>';
         //}
 
+        $href = !empty($podkategorije) ? "/kategorija/{$trenutna_kategorija['Link']}" : "/rezultat/{$trenutna_kategorija['Link']}";
+
         return sadrzaj()->datoteka('rezultat.html')->podatci([
             'predlozak_opis' => Domena::opis(),
             'predlozak_GA' => Domena::GA(),
@@ -233,7 +236,7 @@ final class Rezultat_Kontroler extends Master_Kontroler {
             'zaglavlje_adresa' => Domena::adresa(),
             'podnozje_dostava' => Domena::podnozjeDostava(),
             'gdpr' => $gdpr->html(),
-            'vi_ste_ovdje' => 'Vi ste ovdje : <a href="/">Kapriol Web Trgovina</a> \\\\ <a href="/rezultat/'.$trenutna_kategorija['Link'].'">' . $trenutna_kategorija['Kategorija'] . '</a> \\\\ <a href="/rezultat/'.$trenutna_kategorija['Link'].'/'.$trenutna_podkategorija['Link'].'">' . $trenutna_podkategorija['Podkategorija'] . '</a> \\\\ ' . $trazi,
+            'vi_ste_ovdje' => 'Vi ste ovdje : <a href="/">Kapriol Web Trgovina</a> \\\\ <a href="'.$href.'">' . $trenutna_kategorija['Kategorija'] . '</a> \\\\ <a href="/rezultat/'.$trenutna_kategorija['Link'].'/'.$trenutna_podkategorija['Link'].'">' . $trenutna_podkategorija['Podkategorija'] . '</a> \\\\ ' . $trazi,
             'opci_uvjeti' => Domena::opciUvjeti(),
             //'izdvojeno' => $izdvojeno_html,
             'artikli' => $artikli_html,

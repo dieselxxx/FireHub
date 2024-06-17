@@ -685,7 +685,6 @@ final class Kosarica_Model extends Master_Model {
             "artikli_gratis" => $email_artikli_gratis_korisnik,
             "total_kolicina" => $total_kolicina . ' kom',
             "total_cijena" => $total_cijena_format . ' '.Domena::valuta(),
-            "total_cijena_euro" => Domena::euroEmail($total_cijena),
             "tvrtka_adresa" => Domena::adresa(),
             "tvrtka_telefon" => Domena::telefon(),
             "tvrtka_mobitel" => Domena::mobitel()
@@ -714,7 +713,6 @@ final class Kosarica_Model extends Master_Model {
             "artikli_gratis" => $email_artikli_gratis_korisnik,
             "total_kolicina" => $total_kolicina . ' kom',
             "total_cijena" => $total_cijena_format . ' '.Domena::valuta(),
-            "total_cijena_euro" => Domena::euroEmail($total_cijena),
             "tvrtka_adresa" => Domena::adresa(),
             "tvrtka_telefon" => Domena::telefon(),
             "tvrtka_mobitel" => Domena::mobitel()
@@ -745,8 +743,6 @@ final class Kosarica_Model extends Master_Model {
             "artikli" => $email_artikli_korisnik,
             "artikli_gratis" => $email_artikli_gratis_korisnik,
             "total_kolicina" => $total_kolicina . ' kom',
-            "total_cijena" => $total_cijena_format . ' '.Domena::valuta(),
-            "total_cijena_euro" => Domena::euroEmail($total_cijena),
             "tvrtka_adresa" => Domena::adresa(),
             "tvrtka_telefon" => Domena::telefon(),
             "tvrtka_mobitel" => Domena::mobitel()

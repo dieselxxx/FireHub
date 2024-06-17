@@ -101,38 +101,38 @@ final class Artikl_Kontroler extends Master_Kontroler {
         }
 
         // cijene
-        $euro_cijena = Domena::Hr() ? '<span>'.number_format((float)$trenutni_artikl['Cijena'] * 7.5345, 2, ',', '.').' kn</span>' : '';
+        $najnize_cijena = Domena::Hr()
+            ? '<span style="font-size: 0.7rem">
+                    najniža cijena u posljednih 30 dana: '.$trenutni_artikl['Cijena30Dana'] .' '.Domena::valuta().'
+                    </span>'
+            : '';
+
         if ($trenutni_artikl['CijenaAkcija'] > 0) {
 
             $artikal_popust = -($trenutni_artikl['Cijena'] - $trenutni_artikl['CijenaAkcija']) / ($trenutni_artikl['Cijena']) * 100;
 
-            $euro_cijena_akcija = Domena::Hr() ? '<span>'.number_format((float)$trenutni_artikl['CijenaAkcija'] * 7.5345, 2, ',', '.').' kn</span>' : '';
-
             $artikl_cijena = '
                 <span class="prekrizi">'.number_format((float)$trenutni_artikl['Cijena'], 2, ',', '.').' '.Domena::valuta().'</span>
                 <h2 class="akcija">'.number_format((float)$trenutni_artikl['CijenaAkcija'], 2, ',', '.').' '.Domena::valuta().'</h2>
-                <span class="prekrizi">'.$euro_cijena.'</span>
-                <h2 class="akcija">'.$euro_cijena_akcija.'</h2>
+                '.$najnize_cijena.'
                 <span class="popust">'.number_format($artikal_popust, 2, ',').' %</span>
             ';
 
         } else if (Domena::blackFriday()) {
 
             $bf_cijena = $trenutni_artikl['Cijena'] - ($trenutni_artikl['Cijena'] * Domena::blackFridayPopust());
-            $bf_cijena_euro = Domena::Hr() ? '<span>'.number_format(((float)$trenutni_artikl['Cijena'] * 7.5345) - ((float)$trenutni_artikl['Cijena'] * 7.5345 * Domena::blackFridayPopust()), 2, ',', '.').' kn</span>' : '';
             $artikl_cijena = '
                 <img alt="bf" src="/kapriol/resursi/grafika/logo/bf.png">
                 <h2 style="margin-top: 10px;">'.number_format((float)$bf_cijena, 2, ',', '.').' '.Domena::valuta().'</h2>
-                <h2 style="margin-top: -5px;">'.$bf_cijena_euro.'</h2>
                 <span class="prekrizi">'.number_format((float)$trenutni_artikl['Cijena'], 2, ',', '.').' '.Domena::valuta().'</span>
-                <span class="prekrizi">'.$euro_cijena.'</span>
+                '.$najnize_cijena.'
             ';
 
         } else {
 
             $artikl_cijena = '
                 <h2>'.number_format((float)$trenutni_artikl['Cijena'], 2, ',', '.').' '.Domena::valuta().'</h2>
-                <h2>'.$euro_cijena.'</h2>
+                '.$najnize_cijena.'
             ';
 
         }

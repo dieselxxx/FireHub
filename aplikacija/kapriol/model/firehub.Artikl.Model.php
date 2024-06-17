@@ -59,7 +59,8 @@ final class Artikl_Model extends Master_Model {
                 SELECT
                     artikliview.ID, artikliview.Naziv, artikliview.Opis, artikliview.".Domena::sqlCijena()." AS Cijena, artikliview.".Domena::sqlCijenaAkcija()." AS CijenaAkcija, artikliview.Novo,
                     kategorijeview.Kategorija, kategorijeview.Link as KategorijaLink, IFNULL(podkategorijeview.Podkategorija, 'Sve podkategorije') as Podkategorija, IFNULL(podkategorijeview.Link, 'sve') as PodkategorijaLink, slikeartikal.Slika, artikliview.Link,
-                    ".(Domena::Hr() ? 'artikliview.GratisHr' : 'artikliview.GratisBa')." AS GratisID, gratis.Naziv AS GratisNaziv, gratisslika.Slika AS GratisSlika, gratis.Link AS GratisLink
+                    ".(Domena::Hr() ? 'artikliview.GratisHr' : 'artikliview.GratisBa')." AS GratisID, gratis.Naziv AS GratisNaziv, gratisslika.Slika AS GratisSlika, gratis.Link AS GratisLink,
+                    artikliview.Cijena30Dana".Domena::sqlTablica()." AS Cijena30Dana
                 FROM artikliview
                 LEFT JOIN kategorijeview ON kategorijeview.ID = artikliview.KategorijaID
                 LEFT JOIN podkategorijeview ON podkategorijeview.ID = artikliview.PodKategorijaID

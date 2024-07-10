@@ -317,7 +317,7 @@ final class Domena {
 
         }
 
-        return 'KAPRIOL POINT d.o.o. Mostar, zastupnik i distributer branda Kapriol na tržištu Bosne i Hercegovine. Kneza Višesalava bb (SPC Mljekara, Lamela A) | Mostar | Tel.: +387 36 349 223 | kapriol(at)kapriol-point.com';
+        return 'KAPRIOL POINT d.o.o. Mostar, zastupnik i distributer branda Kapriol na tržištu Bosne i Hercegovine. Dubrovačka bb (SC Piramida), 88000 | Mostar | Tel.: +387 36 349 223 | kapriol(at)kapriol-point.com';
 
     }
 

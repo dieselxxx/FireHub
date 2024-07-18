@@ -101,7 +101,7 @@ final class Odgovor implements Odgovor_Interface {
      */
     public function sadrzaj ():string {
 
-        ob_start('ob_gzhandler');
+        ob_start();
 
         try {
 

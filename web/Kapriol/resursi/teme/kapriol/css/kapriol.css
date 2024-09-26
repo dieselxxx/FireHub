@@ -314,7 +314,7 @@ main > div#sadrzaj.rezultat > div.artikli > form.artikal > * {justify-self: cent
 main > div#sadrzaj.rezultat > div.artikli > form.artikal > button.favorit {position: absolute; background-image: url("/kapriol/resursi/grafika/ikone/kapriol.svg"); background-size: contain; background-repeat: no-repeat; background-position: center; background-color: transparent; margin: 0; top: 12px; right: 5px; height: 35px; width: 35px; border: 0; z-index: 999;}
 main > div#sadrzaj.rezultat > div.artikli > form.artikal > button.favorit:hover {background-image: url("/kapriol/resursi/grafika/ikone/kapriol.svg");}
 main > div#sadrzaj.rezultat > div.artikli > form.artikal > a {position: relative; display: block; height: 100%; width: 100%;}
-main > div#sadrzaj.rezultat > div.artikli > form.artikal > a > img {object-fit: cover; height: 100%; width: 100%;}
+main > div#sadrzaj.rezultat > div.artikli > form.artikal > a > img {object-fit: contain; height: 100%; width: 100%;}
 main > div#sadrzaj.rezultat > div.artikli > form.artikal > span.gratis > svg {fill: #000; height: 40px; width: 40px;}
 main > div#sadrzaj.rezultat > div.artikli > form.artikal > a.naslov {font-weight: 500; color: var(--boja-tekst-tamnije);}
 main > div#sadrzaj.rezultat > div.artikli > form.artikal > a.naslov:hover {color: var(--boja-kapriol);}

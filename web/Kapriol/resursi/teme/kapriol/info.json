@@ -2,8 +2,8 @@
     "css": [
         "css/root.css",
         "css/normaliziranje.css",
-        "css/grid.css?v=1.0",
-        "css/kapriol.css?v=1.26",
+        "css/grid.css?v=1.01",
+        "css/kapriol.css?v=1.30",
         "css/swiper-bundle.min.css"
     ],
     "javascript": []

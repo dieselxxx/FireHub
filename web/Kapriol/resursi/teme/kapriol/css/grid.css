@@ -19,7 +19,7 @@ footer {display: grid; grid-area: podnozje; grid-template-columns: 1fr repeat(5,
 
 @media only screen and (max-width: 768px) {
 
-    header {grid-template-rows: 60px 80px max-content;}
+    header {grid-template-columns: repeat(7, 1fr); grid-template-rows: 60px 80px max-content;}
 
 }
 

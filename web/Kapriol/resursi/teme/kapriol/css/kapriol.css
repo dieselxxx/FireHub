@@ -245,6 +245,7 @@ header > div#info > a > svg {fill: var(--boja-tekst-svjetlije); height: 30px; wi
 header > a.logo {grid-column: 2 / 3; grid-row: 2 / 3; height: 120px; width: 270px; align-self: center; justify-self: left; background-image: url('/kapriol/resursi/grafika/logo/logo.svg'); background-position: center center; background-repeat: no-repeat;}
 header > a#outlet {display: none;}
 header > a#akcija {display: none;}
+header > a#novo {display: none;}
 header > a.trazi {display: none;}
 header > form[data-oznaka="trazi_artikal"] {grid-column: 4 / 6; grid-row: 2 / 3; display: flex; flex-direction: column; justify-content: center;}
 header > form[data-oznaka="trazi_artikal"] > label {padding: 15px; line-height: initial;}
@@ -585,18 +586,22 @@ footer > div.info > span {grid-column: 3 / 5; grid-row: 2 / 3; justify-self: cen
 
 @media only screen and (max-width: 768px) {
 
+    header > div#info {grid-column: 1 / 8;}
+    header > a.trazi {grid-column: 7 / 8;}
+    header > a#favorit {grid-column: 6 / 7;}
     header > div#info > a.facebook {grid-column: 1 / 2; justify-self: left; margin-left: 100px;}
     header > div#info > a.instagram {grid-column: 1 / 2; justify-self: left; margin-left: 150px;}
     header a.logo {grid-column: 1 / 4; justify-self: center; background-size: contain; height: 60px; width: 135px;}
     header > a#prijava {grid-column: 1 / 4; grid-row: 2 / 3;}
-    header > a#kosarica {grid-column: 4 / 5; grid-row: 2 / 3; justify-self: center; margin: 0;}
+    header > a#kosarica {grid-column: 5 / 6; grid-row: 2 / 3; justify-self: center; margin: 0;}
     header > a#kosarica > span {text-indent: 5px;}
-    header > a#outlet {display: initial; grid-column: 4 / 5; grid-row: 1 / 2; justify-self: center; align-self: center; height: 40px; width: 40px;}
-    header > a#akcija {display: initial; grid-column: 5 / 6; grid-row: 1 / 2; justify-self: center; align-self: center; height: 40px; width: 40px;}
-    header > a#akcija svg {fill: var(--boja-kapriol); height: 40px; width: 40px;}
-    header > a#outlet svg {fill: #000; height: 40px; width: 40px;}
+    header > a#outlet {display: initial; grid-column: 4 / 5; grid-row: 1 / 2; justify-self: right; align-self: center; height: 30px; width: 30px;}
+    header > a#akcija {display: initial; grid-column: 5 / 6; grid-row: 1 / 2; justify-self: center; align-self: center; height: 30px; width: 30px;}
+    header > a#novo {display: initial; grid-column: 6 / 7; grid-row: 1 / 2; justify-self: left; align-self: center; height: 30px; width: 30px;}
+    header > a#akcija svg, header > a#novo svg {fill: var(--boja-kapriol); height: 30px; width: 30px;}
+    header > a#outlet svg {fill: #000; height: 30px; width: 30px;}
     header > form[data-oznaka="trazi_artikal"] {grid-row: 3 / 4;}
-    header > nav.glavni_meni {visibility: hidden; grid-column: 6 / 7; justify-self: center; align-self: center; grid-row: 1 / 2; height: 42px; width: 40px;}
+    header > nav.glavni_meni {visibility: hidden; grid-column: 7 / 8; justify-self: center; align-self: center; grid-row: 1 / 2; height: 42px; width: 40px;}
     header > nav.glavni_meni .glavni_meni_standardni {display: none;}
     header > nav.glavni_meni .glavni_meni_hamburger {visibility: visible; height: 40px; width: 40px;}
     header .glavni_meni_hamburger .hamburger-menu_gumb {padding-left: 0; height: 40px; width: 40px;}

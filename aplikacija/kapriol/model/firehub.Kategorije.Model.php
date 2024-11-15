@@ -198,6 +198,14 @@ final class Kategorije_Model extends Master_Model {
                 'Link' => 'outlet'
             ];
 
+        } else if ($kategorija === 'novo') {
+
+            return [
+                'ID' => 'novo',
+                'Kategorija' => 'Novo',
+                'Link' => 'novo'
+            ];
+
         }
 
         if ($naziv !== '') {

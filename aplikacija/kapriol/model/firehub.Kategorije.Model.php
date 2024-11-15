@@ -70,7 +70,7 @@ final class Kategorije_Model extends Master_Model {
                 <span><a href="/rezultat/akcija">Na akciji</a></span>
             </li>
             <li>
-                <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#akcija_novo"></use></svg>
+                <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#novo"></use></svg>
                 <span><a href="/rezultat/novo">Novo</a></span>
             </li>
         ';

@@ -69,6 +69,10 @@ final class Kategorije_Model extends Master_Model {
                 <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#akcija_novi2"></use></svg>
                 <span><a href="/rezultat/akcija">Na akciji</a></span>
             </li>
+            <li>
+                <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#akcija_novo"></use></svg>
+                <span><a href="/rezultat/novo">Novo</a></span>
+            </li>
         ';
         foreach ($kategorije_meni as $kategorija) {
 

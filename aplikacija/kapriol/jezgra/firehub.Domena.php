@@ -377,7 +377,7 @@ final class Domena {
 
         if (date("m-d") >= '11-29' && date("m-d") <= '11-30') {
 
-            return true;
+            return false;
 
         }
 

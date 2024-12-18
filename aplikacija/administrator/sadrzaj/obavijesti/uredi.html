@@ -1,0 +1,104 @@
+<form data-oznaka="obavijest" data-sifra="{{id}}" method="post" enctype="multipart/form-data">
+
+    <fieldset class="detalji">
+        <legend>Obavijest</legend>
+        <table class="podatci">
+            <tbody>
+            <tr>
+                <td>
+                    <label>
+                        <span>ID obavijest:</span>
+                        <div data-boja="boja">
+                            <input type="text" name="id" maxlength="30" value="{{id}}" autocomplete="off" placeholder="ID obavijest" disabled>
+                        </div>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label data-boja="boja" class="select">
+                        <select class="input-select" name="artikl">
+                            <option value="{{artikal}}">{{artikal_naziv}}</option>
+                            <option value="">=== bez artikla ===</option>
+                            {{artikli}}
+                        </select>
+                        <span class="select-odabrano"></span>
+                        <span class="select-granica"></span>
+                        <label class="select-odaberite">Artikal</label>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label data-boja="boja" class="unos">
+                        <input type="text" name="linkBA" value="{{linkBA}}" autocomplete="off" placeholder="Link do stranice u BIH">
+                        <span class="naslov">
+                            <span>Link BIH</span>
+                        </span>
+                        <span class="granica"></span>
+                        <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#info"></use></svg>
+                        <span class="pomoc">
+                            * primjer je "https://www.vasa_domena.com".<br>
+                            * Ukoliko postavljate url, ono ima prioritet nad poljem artikla.
+                        </span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label data-boja="boja" class="unos">
+                        <input type="text" name="linkHR" value="{{linkHR}}" autocomplete="off" placeholder="Link do stranice u HR">
+                        <span class="naslov">
+                            <span>Link HR</span>
+                        </span>
+                        <span class="granica"></span>
+                        <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#info"></use></svg>
+                        <span class="pomoc">
+                            * primjer je "https://www.vasa_domena.com".<br>
+                            * Ukoliko postavljate url, ono ima prioritet nad poljem artikla.
+                        </span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label data-boja="boja" class="unos">
+                        <input type="number" name="redoslijed" value="{{redoslijed}}" maxlength="10" autocomplete="off" placeholder="1">
+                        <span class="naslov">
+                            <span>Redoslijed rotatora</span>
+                        </span>
+                        <span class="granica"></span>
+                        <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#cijena"></use></svg>
+                        <span class="upozorenje"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <label data-boja="boja" class="kontrolni_okvir">
+                            <span>Prikaži na BA stranici</span>
+                            <input name="ba" type="checkbox" {{ba}}><span class="kontrolni_okvir"><span class="ukljuceno"></span></span>
+                        </label>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <label data-boja="boja" class="kontrolni_okvir">
+                            <span>Prikaži na HR stranici</span>
+                            <input name="hr" type="checkbox" {{hr}}><span class="kontrolni_okvir"><span class="ukljuceno"></span></span>
+                        </label>
+                    </label>
+                </td>
+            </tr>
+            <tr class="poruka">
+                <td>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </fieldset>
+
+</form>

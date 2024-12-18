@@ -1,0 +1,75 @@
+<div id="sadrzaj" class="artikl">
+
+    <div class="vi_ste_ovdje">{{vi_ste_ovdje}}</div>
+
+    <div class="greska">{{kosarica_greska}}</div>
+
+    <form class="artikl" method="post" enctype="multipart/form-data" action="">
+        <h2 class="naziv">{{artikl_naziv}}</h2>
+        <input type="hidden" name="ID" value="{{artikl_id}}" />
+        <div class="slika">
+            <img src="/slika/velikaslika/{{artikl_slika}}" alt="" loading="lazy"/>
+            <button class="favorit gumb ikona" type="submit" name="favorit"></button>
+        </div>
+        <ul class="slike">{{artikl_slike}}</ul>
+        <span class="cijena">{{artikl_cijena}}</span>
+        <div class="zaliha_gratis">
+            <ul>
+                {{artikl_gratis_zaliha}}
+            </ul>
+        </div>
+        <ul class="zaliha">
+            {{artikl_zaliha}}
+        </ul>
+        <span class="kosarica">
+            <button type="button" class="gumb minus" onclick="ArtikalPlusMinus(this, $vrsta = 'minus');">-</button>
+            <label data-boja="boja" class="unos">
+                <input type="number" name="vrijednost" data-pakiranje="1" data-maxpakiranje="1000" value="1" min="1" max="100" step="1" autocomplete="off" pattern="0-9">
+                <span class="naslov">
+                    <span></span>
+                </span>
+                <span class="granica"></span>
+            </label>
+            <button type="button" class="gumb plus" onclick="ArtikalPlusMinus(this, $vrsta = 'plus');">+</button>
+            <button type="submit" class="gumb ikona" data-boja="boja" name="kosarica_dodaj">
+                <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#kosarica"></use></svg>
+                <span>Dodaj</span>
+            </button>
+        </span>
+        <span class="opis">
+            <h3>Specifikacije :</h3>
+            <span>{{artikl_opis}}</span>
+        </span>
+    </form>
+
+    {{calc_velicina}}
+
+    <div class="slicni_artikli"></div>
+
+</div>
+<script type="text/javascript" src="/kapriol/resursi/teme/kapriol/js/popperjs.js"></script>
+<script type="text/javascript" src="/kapriol/resursi/teme/kapriol/js/tippy.js"></script>
+<script async type="text/javascript" src="/kapriol/resursi/teme/kapriol/js/zumiranje.js"></script>
+<script type="text/javascript">
+tippy('.sifraArtikla', {
+    delay: [1000, 20],
+    touch: ["hold", 500]
+});
+</script>
+<script async type="text/javascript">
+    window.onload = function () {
+        $("ul.slike a").on('click', function () {
+
+            let slika = $(this).attr("href");
+            let okvir = $(this).parent().parent().parent().find('div.slika > img');
+
+            $(okvir).attr("src", slika);
+
+            return false;
+
+        });
+        $('.slika > img').slika_zumiranje();
+    }
+</script>
+{{google_artikal}}
+{{ga4_artikal}}

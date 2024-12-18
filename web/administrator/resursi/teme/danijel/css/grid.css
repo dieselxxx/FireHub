@@ -1,0 +1,13 @@
+body {display: grid; grid-template-areas: 'navigacija zaglavlje zaglavlje zaglavlje' 'navigacija sadrzaj sadrzaj sadrzaj' 'navigacija podnozje podnozje podnozje'; grid-template-columns: 260px 1fr 1fr 1fr; grid-template-rows: 60px 1fr 25px; height: 100vh; width: 100vw;}
+body.zatvoren {grid-template-columns: 60px 1fr 1fr 1fr;}
+form[data-oznaka="prijava"] {display: grid; grid-area: zaglavlje-start / 1 / podnozje-end / 5; grid-template-areas: "." "." "."; place-items: center center;}
+header {grid-area: zaglavlje;}
+aside {grid-area: navigacija;}
+main {grid-area: sadrzaj; overflow-y: scroll;}
+footer {grid-area: podnozje;}
+
+@media only screen and (max-width: 768px) {
+
+    body {grid-template-columns: 60px 1fr 1fr 1fr;}
+
+}

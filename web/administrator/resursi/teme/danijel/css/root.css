@@ -1,0 +1,16 @@
+:root {
+    --boja-placeholder: #9e9e9e;
+    --boja-kapriol: #ec6c00;
+    --boja-kapriol-rgba: rgba(236, 108, 0, 1);
+    --boja-kapriol-svjetlije: #ff7501;
+    --boja-kapriol-tamnije: #b95500;
+    --boja-pozadina: #ffffff;
+    --boja-pozadina_tamna: #162125;
+    --boja-pozadina_svijetla: #f6f6f6;
+    --boja-tekst-tamnije: #162125;
+    --boja-pozadina_tamna_total: #121A1D;
+    --boja-tekst-malo-tamnije: #444444;
+    --boja-tekst: #777777;
+    --boja-tekst-svjetlije: #A0A3A4;
+    --boja-granica: #E9E9E9;
+}

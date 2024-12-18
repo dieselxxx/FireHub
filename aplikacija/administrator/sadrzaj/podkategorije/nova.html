@@ -1,0 +1,37 @@
+<form data-oznaka="podkategorija" data-sifra="0" method="post" enctype="multipart/form-data" action="/">
+
+    <fieldset class="detalji">
+        <legend>Kategorija</legend>
+        <table class="podatci">
+            <tbody>
+            <tr>
+                <td>
+                    <label>
+                        <span>Naziv podkategorije:</span>
+                        <div data-boja="boja">
+                            <input type="text" name="naziv" maxlength="100" value="" autocomplete="off" placeholder="{{Naziv podkategorije}}" pattern=".{3,250}" required>
+                        </div>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label data-boja="boja" class="select">
+                        <select class="input-select" name="kategorija" required>
+                            {{kategorije}}
+                        </select>
+                        <span class="select-odabrano"></span>
+                        <span class="select-granica"></span>
+                        <label class="select-odaberite">Kategorija</label>
+                    </label>
+                </td>
+            </tr>
+            <tr class="poruka">
+                <td>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </fieldset>
+
+</form>

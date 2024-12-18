@@ -1,0 +1,48 @@
+<div id="sadrzaj" class="rezultat">
+
+    <div class="vi_ste_ovdje">{{vi_ste_ovdje}}</div>
+
+    <div class="meni">
+
+        <form data-oznaka="rezultat_poredak" method="post" enctype="multipart/form-data" action="">
+
+            <label data-boja="boja" class="select">
+                <select data-oznaka="redoslijed" name="poredaj" required>
+                    {{poredaj_izbornik}}
+                </select>
+                <span class="select-odabrano"></span>
+                <span class="select-granica"></span>
+                <label class="select-odaberite">Poredaj po</label>
+            </label>
+
+        </form>
+
+        <form data-oznaka="rezultat_podkategorije" method="post" enctype="multipart/form-data" action="">
+            <label data-boja="boja" class="select">
+                <select data-oznaka="podkategorija" name="podkategorija" required>
+                    {{podkategorije_html}}
+                </select>
+                <span class="select-odabrano"></span>
+                <span class="select-granica"></span>
+                <label class="select-odaberite">Podkategorije</label>
+            </label>
+        </form>
+
+        <!--<div class="velicine">
+            <span>Dostupne veličine</span>
+            <ul>
+                {{rezultat_velicine}}
+            </ul>
+        </div>-->
+
+    </div>
+
+    <div class="artikli">{{artikli}}</div>
+
+    <nav class="navigacija">
+        <ul>
+            {{navigacija}}
+        </ul>
+    </nav>
+
+</div>

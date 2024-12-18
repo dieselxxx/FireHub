@@ -1,0 +1,31 @@
+body {display: grid; grid-template-areas: 'zaglavlje zaglavlje zaglavlje zaglavlje' 'sadrzaj sadrzaj sadrzaj sadrzaj' 'podnozje podnozje podnozje podnozje'; grid-template-columns: 1fr 1fr 1fr 1fr; grid-template-rows: 260px auto 500px;}
+header {display: grid; grid-area: zaglavlje; grid-template-columns: auto repeat(5, 280px) auto; grid-template-rows: 60px 150px max-content 50px;}
+main {display: grid; grid-area: sadrzaj; grid-template-columns: auto repeat(5, 280px) auto; grid-auto-rows: minmax(min-content, max-content);}
+footer {display: grid; grid-area: podnozje; grid-template-columns: 1fr repeat(5, 280px) 1fr; grid-template-rows: 200px 300px;}
+
+@media only screen and (max-width: 1400px) {
+
+    header, main, footer {grid-template-columns: repeat(6, 1fr);}
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+    body {grid-template-rows: max-content auto 600px;}
+    header {grid-template-rows: 60px 100px max-content 50px;}
+    footer {grid-template-rows: 200px 400px;}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    header {grid-template-columns: repeat(8, 1fr); grid-template-rows: 60px 80px max-content;}
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    body {grid-template-rows: max-content auto 800px;}
+    footer {grid-template-rows: 200px 750px;}
+
+}

@@ -1,0 +1,10 @@
+{
+    "css": [
+        "css/root.css",
+        "css/normaliziranje.css",
+        "css/grid.css?v=1.02",
+        "css/kapriol.css?v=1.31",
+        "css/swiper-bundle.min.css"
+    ],
+    "javascript": []
+}

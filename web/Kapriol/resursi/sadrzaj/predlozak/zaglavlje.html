@@ -1,0 +1,85 @@
+<header>
+
+    <div id="info">
+
+        <a class="facebook" href="{{facebook_link}}" target="_blank" title="facebook">
+            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#facebook"></use></svg>
+        </a>
+        <a class="instagram" href="{{instagram_link}}" target="_blank" title="instagram">
+            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#instagram"></use></svg>
+        </a>
+
+        <a class="whatsup" href="https://wa.me/{{mobitel}}" title="whatsup">
+            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#whatsup"></use></svg>
+        </a>
+
+        <a class="viber" href="viber://contact?number=%2B{{mobitel}}" title="viber">
+            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#viber"></use></svg>
+        </a>
+
+    </div>
+
+    <a class="logo" href="/" title="logo"></a>
+
+    <a class="trazi" title="traži" href="/">
+        <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#trazi"></use></svg>
+    </a>
+
+    <form data-oznaka="trazi_artikal" method="post" enctype="multipart/form-data" action="">
+        <label data-boja="boja" class="unos">
+            <input type="text" name="trazi" value="" maxlength="50" autocomplete="off" placeholder="Pretražite proizvode po nazivu, brandu ili robnoj grupi..." required="required" pattern=".{3,50}">
+            <span class="naslov">
+                <span>Upišite pojam za traženje</span>
+            </span>
+            <span class="granica"></span>
+            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#trazi"></use></svg>
+            <span class="upozorenje"></span>
+        </label>
+    </form>
+
+    <a data-boja="boja" id="kosarica" href="/kosarica">
+        <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#kosarica"></use></svg>
+        <span>({{zaglavlje_kosarica_artikli}})</span>
+    </a>
+
+    <a data-boja="boja" id="favorit" href="/favorit">
+        <img src="/kapriol/resursi/grafika/ikone/kapriol.svg" alt="slika" />
+        <span>({{zaglavlje_favorit_artikli}})</span>
+    </a>
+
+    <a id="outlet" href="/rezultat/outlet" title="outlet">
+        <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#akcija_sale"></use></svg>
+    </a>
+
+    <a id="akcija" href="/rezultat/akcija" title="akcija">
+        <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#akcija_novi2"></use></svg>
+    </a>
+
+    <a id="novo" href="/rezultat/novo" title="novo">
+        <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#novo"></use></svg>
+    </a>
+
+    <nav class="glavni_meni">
+
+        <ul class="glavni_meni_standardni">
+            {{glavni_meni}}
+        </ul>
+
+        <div class="glavni_meni_hamburger">
+
+            <input id="hamburger-menu-toggle" type="checkbox" />
+            <label class="hamburger-menu_gumb" for="hamburger-menu-toggle">
+                <p>Sve kategorije</p>
+                <span></span>
+                <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#meni_novi"></use></svg>
+            </label>
+
+            <ul class="hamburger-menu_ul">
+                {{glavni_meni_hamburger}}
+            </ul>
+
+        </div>
+
+    </nav>
+
+</header>

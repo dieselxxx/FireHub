@@ -1,0 +1,77 @@
+<html lang="hr">
+
+<head>
+
+    <!--meta-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--naslov-->
+    <title>Kapriol - vaša narudžba</title>
+
+</head>
+
+<body style="background-color: #162125; margin: 0; padding: 0; color: #162125;">
+
+<table cellpadding="0" cellspacing="10" border="0" width="800" align="center" role="presentation" style="background-color: #E9E9E9; width: 800px; text-align: center; border-width: 3px 1px 1px 1px; border-style: solid; border-color: #ec6c00;">
+    <tr>
+        <td width="800">
+            <table cellpadding="0" cellspacing="20" border="0" align="center" style="text-align: center;">
+                <tr>
+                    <td>
+                        <img src="cid:logo" height="100" width="auto" alt="webshop_logo" />
+                    </td>
+                </tr>
+                <tr style="text-align: left;">
+                    <td>
+                        '{{ime}}' '{{prezime}}',<br><br>
+                        Hvala vam na kupovini na Kapriol Web Trgovini.<br>
+                        Vaša narudžba je zaprimljena, te ukoliko imate dodatnih pitanja u vezi vaše narudžbe možete nas kontaktirati na danijel.galic007@gmail.com.
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td width="800">
+            <table cellpadding="10" cellspacing="0" border="0">
+                <thead>
+                <tr>
+                    <th style="border-bottom: 1px solid #ec6c00">Šifra artikla</th>
+                    <th style="border-bottom: 1px solid #ec6c00">Naziv artikla</th>
+                    <th style="border-bottom: 1px solid #ec6c00">Veličina artikla</th>
+                    <th style="border-bottom: 1px solid #ec6c00">Količina</th>
+                    <th style="border-bottom: 1px solid #ec6c00">Jedinična cijena</th>
+                    <th style="border-bottom: 1px solid #ec6c00">Ukupna cijena</th>
+                </tr>
+                </thead>
+                <tbody>
+                '{{artikli}}'
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td width="800" style="text-align: right;">
+            <table cellpadding="0" cellspacing="10" border="0">
+                <tr><td>Ukupna količina: <b>'{{total_kolicina}}'</b></td></tr>
+                <tr><td>Ukupna cijena: <b>'{{total_cijena}}'</b></td></tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td width="800" style="text-align: left;">
+            <table cellpadding="0" cellspacing="10" border="0">
+                <tr><td>Grad: <b>'{{grad}}'</b></td></tr>
+                <tr><td>Telefon: <b>'{{telefon}}'</b></td></tr>
+                <tr><td>Adresa: <b>'{{adresa}}'</b></td></tr>
+                <tr><td>Poštanski broj: <b>'{{zip}}'</b></td></tr>
+                <tr><td>Napomena: <b>'{{napomena}}'</b></td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+</body>
+
+</html>

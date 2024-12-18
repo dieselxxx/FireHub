@@ -1,0 +1,48 @@
+<form data-oznaka="kategorija" data-sifra="0" method="post" enctype="multipart/form-data" action="/">
+
+    <fieldset class="detalji">
+        <legend>Kategorija</legend>
+        <table class="podatci">
+            <tbody>
+            <tr>
+                <td>
+                    <label>
+                        <span>Naziv kategorije:</span>
+                        <div data-boja="boja">
+                            <input type="text" name="naziv" maxlength="100" value="" autocomplete="off" placeholder="" pattern=".{3,250}" required>
+                        </div>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label data-boja="boja" class="unos">
+                        <input type="number" name="redoslijed" value="" maxlength="10" autocomplete="off" placeholder="1">
+                        <span class="naslov">
+                            <span>Redoslijed kategorije</span>
+                        </span>
+                        <span class="granica"></span>
+                        <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#cijena"></use></svg>
+                        <span class="upozorenje"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <label data-boja="boja" class="kontrolni_okvir">
+                            <span>Kalkulator veličina</span>
+                            <input name="calc_velicina" type="checkbox"><span class="kontrolni_okvir"><span class="ukljuceno"></span></span>
+                        </label>
+                    </label>
+                </td>
+            </tr>
+            <tr class="poruka">
+                <td>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </fieldset>
+
+</form>

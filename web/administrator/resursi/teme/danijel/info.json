@@ -1,0 +1,13 @@
+{
+    "css": [
+        "css/root.css",
+        "css/normaliziranje.css",
+        "css/grid.css",
+        "css/danijel.css"
+    ],
+    "javascript": [
+        "js/biblioteke.js",
+        "js/dodaj.js?v=1.0",
+        "js/firehub.js?v=1.0"
+    ]
+}

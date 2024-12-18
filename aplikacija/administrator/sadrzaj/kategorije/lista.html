@@ -1,0 +1,47 @@
+<form data-oznaka="kategorije_lista" method="post" enctype="multipart/form-data" action="" onsubmit="$_Kategorije(); return false;">
+
+    <script>
+        $(document).ready(function () {
+            $_Kategorije(this,1,'Kategorija','asc');
+        });
+    </script>
+
+    <section data-boja="roza" class="modul">
+        <div class="zaglavlje veliko">
+            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#artikl"></use></svg>
+            <h4>Popis kategorija</h4>
+            <h6>Pregled vaših kategorija</h6>
+        </div>
+        <div class="opcije">
+            <a class="sinkronizacija" onclick="$_Kategorije();">
+                <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#sinkronizacija"></use></svg>
+            </a>
+            <a class="puni_zaslon">
+                <svg data-oznaka="1" style=""><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#puni_zaslon"></use></svg>
+                <svg data-oznaka="2" style="display: none;"><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#prozor_zaslon"></use></svg>
+            </a>
+        </div>
+        <div class="sadrzaj">
+            <a class="gumb" data-boja="roza" onclick="$_KategorijaNova()">Nova kategorija</a>
+            <label data-boja="roza" class="unos">
+                <input type="text" name="pretraga" value="" maxlength="50" autocomplete="off" placeholder="Pretražite kategorije..." pattern=".{3,50}">
+                <span class="naslov">
+                    <span>Upišite pojam za traženje</span>
+                    <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#potvrda_duplo"></use></svg>
+                </span>
+                <span class="granica"></span>
+                <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#trazi"></use></svg>
+                <span class="upozorenje"></span>
+            </label>
+            <table class="tabela">
+                <thead>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="kontrole">
+        </div>
+    </section>
+
+</form>

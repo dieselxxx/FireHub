@@ -1,0 +1,254 @@
+<form data-oznaka="artikl" data-sifra="{{id}}" method="post" enctype="multipart/form-data" action="/administrator/artikli/dodajsliku/{{id}}">
+
+    <fieldset class="detalji">
+        <legend>Osnovne postavke artikla</legend>
+        <table class="podatci">
+            <tbody>
+                <tr>
+                    <td>
+                        <label>
+                            <span>ID artikla:</span>
+                            <div data-boja="boja">
+                                <input type="text" name="id" maxlength="30" value="{{id}}" autocomplete="off" placeholder="ID artikla" disabled>
+                            </div>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <span>Naziv artikla:</span>
+                            <div data-boja="boja">
+                                <input type="text" name="naziv" maxlength="100" value="{{naziv}}" autocomplete="off" placeholder="{{Naziv artikla}}" pattern=".{3,100}" required>
+                            </div>
+                        </label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    <fieldset class="detalji">
+        <legend>Opis artikla</legend>
+        <script>var editor = new Jodit('#editor');</script>
+        <label for="editor"></label><textarea id="editor" name="opis" minlength="0" maxlength="1500" placeholder="">{{opis}}</textarea>
+    </fieldset>
+    <fieldset class="detalji">
+        <legend>Ostale postavke artikla</legend>
+        <table class="podatci">
+            <tbody>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="unos">
+                            <input type="text" name="cijena" value="{{cijena}}" maxlength="10" autocomplete="off" placeholder="0,00" pattern="^\s*-?((\d{1,3}(\.(\d){3})*)|\d*)(,\d{1,2})?\s?\s*$">
+                            <span class="naslov">
+                                    <span>Cijena artikla</span>
+                                </span>
+                            <span class="granica"></span>
+                            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#cijena"></use></svg>
+                            <span class="upozorenje"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="unos">
+                            <input type="text" name="cijena_akcija" value="{{cijena_akcija}}" maxlength="10" autocomplete="off" placeholder="0,00" pattern="^\s*-?((\d{1,3}(\.(\d){3})*)|\d*)(,\d{1,2})?\s?\s*$">
+                            <span class="naslov">
+                                    <span>Cijena akcija artikla</span>
+                                </span>
+                            <span class="granica"></span>
+                            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#cijena"></use></svg>
+                            <span class="upozorenje"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="unos">
+                            <input type="text" name="cijena_hr" value="{{cijena_hr}}" maxlength="10" autocomplete="off" placeholder="0,00" pattern="^\s*-?((\d{1,3}(\.(\d){3})*)|\d*)(,\d{1,2})?\s?\s*$">
+                            <span class="naslov">
+                                    <span>HR Cijena artikla</span>
+                                </span>
+                            <span class="granica"></span>
+                            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#cijena"></use></svg>
+                            <span class="upozorenje"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="unos">
+                            <input type="text" name="cijena_akcija_hr" value="{{cijena_akcija_hr}}" maxlength="10" autocomplete="off" placeholder="0,00" pattern="^\s*-?((\d{1,3}(\.(\d){3})*)|\d*)(,\d{1,2})?\s?\s*$">
+                            <span class="naslov">
+                                    <span>HR Cijena akcija artikla</span>
+                                </span>
+                            <span class="granica"></span>
+                            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#cijena"></use></svg>
+                            <span class="upozorenje"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="select">
+                            <select class="input-select" name="kategorija" required>
+                                <option value="{{kategorija}},{{podkategorija}}">{{kategorija_naziv}}{{podkategorija_naziv}}</option>
+                                {{kategorije}}
+                            </select>
+                            <span class="select-odabrano"></span>
+                            <span class="select-granica"></span>
+                            <label class="select-odaberite">Kategorija ->> Podkategorija</label>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="select">
+                            <select class="input-select" name="gratisBa">
+                                <option value="{{gratisBa}}">{{gratisBa_naziv}}</option>
+                                <option value="0">== bez gratis artikla ==</option>
+                                {{gratis_artikli}}
+                            </select>
+                            <span class="select-odabrano"></span>
+                            <span class="select-granica"></span>
+                            <label class="select-odaberite">Gratis BA</label>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="select">
+                            <select class="input-select" name="gratisHr">
+                                <option value="{{gratisHr}}">{{gratisHr_naziv}}</option>
+                                <option value="0">== bez gratis artikla ==</option>
+                                {{gratis_artikli}}
+                            </select>
+                            <span class="select-odabrano"></span>
+                            <span class="select-granica"></span>
+                            <label class="select-odaberite">Gratis HR</label>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="select">
+                            <select class="input-select" name="zadanaSlika">
+                                <option value="{{zadanaSlika}}">{{zadanaSlika_naziv}}</option>
+                                {{slikeOpcija}}
+                            </select>
+                            <span class="select-odabrano"></span>
+                            <span class="select-granica"></span>
+                            <label class="select-odaberite">Zadana slika</label>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <label data-boja="boja" class="kontrolni_okvir">
+                                <span>Prikaži na BA stranici</span>
+                                <input name="ba" type="checkbox" {{ba}}><span class="kontrolni_okvir"><span class="ukljuceno"></span></span>
+                            </label>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <label data-boja="boja" class="kontrolni_okvir">
+                                <span>Prikaži na HR stranici</span>
+                                <input name="hr" type="checkbox" {{hr}}><span class="kontrolni_okvir"><span class="ukljuceno"></span></span>
+                            </label>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <label data-boja="boja" class="kontrolni_okvir">
+                                <span>Outlet BIH</span>
+                                <input name="outlet" type="checkbox" {{outlet}}><span class="kontrolni_okvir"><span class="ukljuceno"></span></span>
+                            </label>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <label data-boja="boja" class="kontrolni_okvir">
+                                <span>Outlet HR</span>
+                                <input name="outlethr" type="checkbox" {{outlethr}}><span class="kontrolni_okvir"><span class="ukljuceno"></span></span>
+                            </label>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <label data-boja="boja" class="kontrolni_okvir">
+                                <span>Novo</span>
+                                <input name="novo" type="checkbox" {{novo}}><span class="kontrolni_okvir"><span
+                                class="ukljuceno"></span></span>
+                            </label>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <label data-boja="boja" class="kontrolni_okvir">
+                                <span>Izdvojeno</span>
+                                <input name="izdvojeno" type="checkbox" {{izdvojeno}}><span class="kontrolni_okvir"><span class="ukljuceno"></span></span>
+                            </label>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <label data-boja="boja" class="kontrolni_okvir">
+                                <span>Aktivno</span>
+                                <input name="aktivno" type="checkbox" {{aktivno}}><span class="kontrolni_okvir"><span class="ukljuceno"></span></span>
+                            </label>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <div class="input_slika">
+                                <label for="slika">
+                                    <a class="gumb" data-boja="boja">Dodaj sliku</a>
+                                </label>
+                                <input type="file" name="slika" id="slika" accept="image/jpeg">
+                            </div>
+                        </label>
+                    </td>
+                </tr>
+                <tr class="poruka">
+                    <td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+
+    <fieldset class="detalji">
+        <legend>Slike artikla</legend>
+        <table class="tabela">
+            <tbody>
+            {{slike}}
+            </tbody>
+        </table>
+    </fieldset>
+
+    <fieldset class="detalji">
+        <legend>Stare cijene u zadnjih 30 dana</legend>
+        <table class="tabela">
+            <tbody>
+            {{cijene}}
+            </tbody>
+        </table>
+    </fieldset>
+
+</form>

@@ -1,0 +1,138 @@
+<div id="sadrzaj" class="narudzba">
+
+    <div class="vi_ste_ovdje">{{vi_ste_ovdje}}</div>
+
+    <form class="podatci" method="post" enctype="multipart/form-data" action="">
+
+        <section class="greska">{{narudzba_greska}}</section>
+
+        <section class="podatci">
+            <h3>Vaši podatci :</h3>
+            <table>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="unos">
+                            <input type="text" name="ime" value="{{forma_ime}}" maxlength="20" autocomplete="off" placeholder="Upišite vaše ime" required="required" pattern="[A-ZŠĐČĆŽa-zšđčćž\- ]{2,20}">
+                            <span class="naslov">
+                                <span>Vaše ime</span>
+                            </span>
+                            <span class="granica"></span>
+                            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#potpis"></use></svg>
+                            <span class="upozorenje"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="unos">
+                            <input type="text" name="prezime" value="{{forma_prezime}}" maxlength="20" autocomplete="off" placeholder="Upišite vaše prezime" required="required" pattern="[A-ZŠĐČĆŽa-zšđčćž\- ]{2,20}">
+                            <span class="naslov">
+                                <span>Vaše prezime</span>
+                            </span>
+                            <span class="granica"></span>
+                            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#potpis"></use></svg>
+                            <span class="upozorenje"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="unos">
+                            <input type="email" name="email" value="{{forma_email}}" maxlength="100" autocomplete="off" placeholder="Upišite vaš email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                            <span class="naslov">
+                                <span>Email</span>
+                            </span>
+                            <span class="granica"></span>
+                            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#email"></use></svg>
+                            <span class="upozorenje"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="unos">
+                            <input type="text" name="grad" value="{{forma_grad}}" maxlength="50" autocomplete="off" placeholder="Upišite grad" required="required" pattern=".{3,50}">
+                            <span class="naslov">
+                                <span>Grad</span>
+                            </span>
+                            <span class="granica"></span>
+                            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#grad"></use></svg>
+                            <span class="upozorenje"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="unos">
+                            <input type="tel" name="telefon" value="{{forma_telefon}}" autocomplete="off" placeholder="Upišite vaš broj telefona" required="required" pattern="[0-9+- ]{9,15}">
+                            <span class="naslov">
+                                <span>Broj telefona</span>
+                            </span>
+                            <span class="granica"></span>
+                            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#telefon"></use></svg>
+                            <span class="upozorenje"></span>
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="dostava">
+            <h3>Podatci za dostavu :</h3>
+            <table>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="unos">
+                            <input type="text" name="adresa" value="{{forma_adresa}}" maxlength="300" autocomplete="off" placeholder="Upišite vašu adresu za isporuku" required="required" pattern="[A-ZŠĐČĆŽa-zšđčćž0-9\-. ]{5,300}">
+                            <span class="naslov">
+                                <span>Adresa</span>
+                            </span>
+                            <span class="granica"></span>
+                            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#adresa"></use></svg>
+                            <span class="upozorenje"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="unos">
+                            <input type="number" name="zip" value="{{forma_zip}}" min="00001" step="1" autocomplete="off" placeholder="Upišite vaš poštanski broj" required="required">
+                            <span class="naslov">
+                                <span>Poštanski broj</span>
+                            </span>
+                            <span class="granica"></span>
+                            <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#zip"></use></svg>
+                            <span class="upozorenje"></span>
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="napomena">
+            <table>
+                <tr>
+                    <td>
+                        <label data-boja="boja" class="tekst">
+                            <textarea name="napomena" placeholder="">{{forma_napomena}}</textarea>
+                            <span class="naslov">
+                                <span>Napomena</span>
+                            </span>
+                            <span class="granica"></span>
+                            <span class="upozorenje"></span>
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="posalji">
+            <button class="gumb ikona" data-boja="boja" type="submit" name="naruci">
+                <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#strelica_desno_duplo2"></use></svg>
+                <span>Pošalji narudžbu</span>
+            </button>
+        </section>
+
+    </form>
+
+</div>

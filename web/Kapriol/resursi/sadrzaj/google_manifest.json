@@ -1,0 +1,13 @@
+{
+    "name":"Kapriol",
+    "short_name":"Kapriol WebShop",
+    "version":"production",
+    "description":"Kapriol WebShop",
+    "start_url":"\\",
+    "scope":"\\",
+    "display":"fullscreen",
+    "orientation":"any",
+    "background_color":"#ec6c00",
+    "theme_color":"#ec6c00",
+    "prefer_related_applications":false
+}

@@ -1,0 +1,41 @@
+<div id="sadrzaj" class="naslovna">
+
+    <div class="swiper rotator">
+        <div class="swiper-wrapper">
+            {{obavijesti}}
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="naslov">ponuda asortimana</div>
+
+    <div class="kategorije">{{kategorije}}</div>
+
+    <div class="dostava">besplatna dostava za narudžbe iznad {{dostavaLimit}} {{valuta}}</div>
+
+    <div class="reklama1">
+        <a href="/poslovnice" title="reklama">
+            <img
+                srcset="
+                    /slika/reklama/reklama1.jpg/700/1400?v={{reklama1vrijeme}} 1400w,
+                    /slika/reklama/reklama1.jpg/500/1000?v={{reklama1vrijeme}} 1024w,
+                    /slika/reklama/reklama1.jpg/350/700?v={{reklama1vrijeme}} 768w,
+                    /slika/reklama/reklama1.jpg/300/600?v={{reklama1vrijeme}} 600w"
+                src="/slika/reklama/reklama1.jpg/300/600?v={{reklama1vrijeme}} 600w"
+                alt="" loading="lazy"
+            />
+        </a>
+    </div>
+
+    <div class="swiper rotator dole">
+        <div class="swiper-wrapper">
+            {{obavijestidno}}
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+</div>

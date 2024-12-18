@@ -1,0 +1,36 @@
+<section>
+    <div class="zaglavlje"><h4>Prijavite se</h4></div>
+    <div class="sadrzaj">
+        <table>
+            <tbody>
+            <tr>
+                <td>
+                    <label data-boja="boja" class="unos">
+                        <input type="text" name="korisnicko_ime" maxlength="20" value="" autocomplete="off" placeholder="Upišite vaše korisničko ime" required="required" pattern="[A-Za-z]{5,20}">
+                        <span class="naslov">
+                                <span>Korisničko ime</span>
+                            </span>
+                        <span class="granica"></span>
+                        <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#korisnik"></use></svg>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label data-boja="boja" class="unos">
+                        <input type="password" name="lozinka" autocomplete="off" placeholder="Upišite vašu lozinku" required="required" pattern=".{4,}">
+                        <span class="naslov">
+                                <span>Lozinka</span>
+                            </span>
+                        <span class="granica"></span>
+                        <svg><use xlink:href="/kapriol/resursi/grafika/simboli/simbol.ikone.svg#lozinka"></use></svg>
+                    </label>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="kontrole">
+        <button data-boja="boja" type="submit" name="prijavi_se">Prijavi se</button>
+    </div>
+</section>

@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'Kapriol';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url('/kapriol/resursi/font/kapriol/kapriol.font.woff2.normalno.100.woff2') format('woff2'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.woff.normalno.100.woff') format('woff'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.svg.normalno.100.svg') format('svg');
+}
+@font-face {
+    font-family: 'Kapriol';
+    font-style: italic;
+    font-weight: 100;
+    font-display: swap;
+    src: url('/kapriol/resursi/font/kapriol/kapriol.font.woff2.kurziv.100.woff2') format('woff2'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.woff.kurziv.100.woff') format('woff'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.svg.kurziv.100.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'Kapriol';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('/kapriol/resursi/font/kapriol/kapriol.font.woff2.normalno.300.woff2') format('woff2'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.woff.normalno.300.woff') format('woff'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.svg.normalno.300.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'Kapriol';
+    font-style: italic;
+    font-weight: 300;
+    font-display: swap;
+    src: url('/kapriol/resursi/font/kapriol/kapriol.font.woff2.kurziv.300.woff2') format('woff2'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.woff.kurziv.300.woff') format('woff'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.svg.kurziv.300.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'Kapriol';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/kapriol/resursi/font/kapriol/kapriol.font.woff2.normalno.400.woff2') format('woff2'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.woff.normalno.400.woff') format('woff'),
+         url('/kapriol/resursi/font/kapriol/kapriol.font.svg.normalno.400.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'Kapriol';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/kapriol/resursi/font/kapriol/kapriol.font.woff2.kurziv.400.woff2') format('woff2'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.woff.kurziv.400.woff') format('woff'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.svg.kurziv.400.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'Kapriol';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/kapriol/resursi/font/kapriol/kapriol.font.woff2.normalno.500.woff2') format('woff2'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.woff.normalno.500.woff') format('woff'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.svg.normalno.500.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'Kapriol';
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/kapriol/resursi/font/kapriol/kapriol.font.woff2.kurziv.500.woff2') format('woff2'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.woff.kurziv.500.woff') format('woff'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.svg.kurziv.500.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'Kapriol';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/kapriol/resursi/font/kapriol/kapriol.font.woff2.normalno.700.woff2') format('woff2'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.woff.normalno.700.woff') format('woff'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.svg.normalno.700.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'Kapriol';
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/kapriol/resursi/font/kapriol/kapriol.font.woff2.kurziv.700.woff2') format('woff2'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.woff.kurziv.700.woff') format('woff'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.svg.kurziv.700.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'Kapriol';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('/kapriol/resursi/font/kapriol/kapriol.font.woff2.normalno.900.woff2') format('woff2'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.woff.normalno.900.woff') format('woff'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.svg.normalno.900.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'Kapriol';
+    font-style: italic;
+    font-weight: 900;
+    font-display: swap;
+    src: url('/kapriol/resursi/font/kapriol/kapriol.font.woff2.kurziv.900.woff2') format('woff2'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.woff.kurziv.900.woff') format('woff'),
+        url('/kapriol/resursi/font/kapriol/kapriol.font.svg.kurziv.900.svg') format('svg');
+}
